@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- top section -->
+        <div>
+            <input type="text" id="todo-input">
+            <button id="add-todo-btn">Add todo</button>
+        </div>
+        <div id="todos"></div>
+    </main>
+
+    <script> 
+        const todoInput = document.querySelector("#todo-input");
+        const addTodoBtn = document.querySelector("#add-todo-btn");
+        const todos = document.querySelector("#todos");
+
+        addTodoBtn.addEventListener("click", function () {
+            if (todoInput.value) {
+                const newTodo = `
+                <div class="todo">
+                    <input type="checkbox" name="" id="">
+                    <span>${todoInput.value}</span>
+                    <button>Delete</button>
+                </div>
+            `;
+
+                todos.innerHTML += newTodo;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
