@@ -4,45 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Todo App</title>
-    <style>
-        body {
-            background-color: #222;
-            color: #ccc;
-        }
-    </style>
 </head>
 
-<body>
-    <main>
-        <!-- top section -->
-        <div>
-            <input type="text" id="todo-input">
-            <button id="add-todo-btn">Add todo</button>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center p-6">
+    <main class="w-full max-w-xl p-6 bg-gray-800 rounded-lg shadow-lg">
+
+        <!-- Top section -->
+        <div class="flex gap-3 mb-10">
+            <input class="w-full p-3 text-black rounded-md outline-none bg-white" type="text" id="todo-input"
+                placeholder="Enter your task">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-blue-500 transition"
+                id="add-todo-btn">Add</button>
         </div>
-        <div id="todos"></div>
+
+        <!-- Todos section -->
+        <div id="todos" class="space-y-4">
+            
+        </div>
     </main>
 
-    <script> 
-        const todoInput = document.querySelector("#todo-input");
-        const addTodoBtn = document.querySelector("#add-todo-btn");
-        const todos = document.querySelector("#todos");
-
-        addTodoBtn.addEventListener("click", function () {
-            if (todoInput.value) {
-                const newTodo = `
-                <div class="todo">
-                    <input type="checkbox" name="" id="">
-                    <span>${todoInput.value}</span>
-                    <button>Delete</button>
-                </div>
-            `;
-
-                todos.innerHTML += newTodo;
-            }
-        })
-
-    </script>
+    <script src="./app.js"></script>
 </body>
 
 </html>
